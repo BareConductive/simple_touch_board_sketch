@@ -12,7 +12,7 @@ Processing sketch that simply prints when the electrodes of the [Touch Board](ht
 ## Install
 
 1. Close the Processing IDE if you have it open.
-1. Download the [.zip](https://github.com/BareConductive/simple_touch_board/archive/public.zip) or clone the repository to your local machine - if downloading the .zip, extract the contents somewhere that suits you.
+1. Download the [.zip](https://github.com/BareConductive/simple_touch_board_sketch/archive/public.zip) or clone the repository to your local machine - if downloading the .zip, extract the contents somewhere that suits you.
 1. Take the **simple_touch_board** folder and move it to **Processing Sketchbook Folder**. This will be different for each operating system: 
 
 	**Windows**
