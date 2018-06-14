@@ -26,7 +26,7 @@ void setup() {
   status = new int[numElectrodes];
   lastStatus = new int[numElectrodes];
   
-  println(Serial.list());
+  println((Object[])Serial.list());
   // change the 1 below to the number corresponding to the output of the command above
   inPort = new Serial(this, Serial.list()[1], baudRate); 
   inPort.bufferUntil('\n');
