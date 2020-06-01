@@ -1,12 +1,13 @@
 import processing.serial.*;
 
 final int baudRate = 57600;
-final int numElectrodes = 12;
 
 Serial inPort;  // the serial port
 String inString; // input string from serial port
 String[] splitString; // input string array after splitting
 int[] status, lastStatus;
+
+int device_number = 0;
 
 void updateArraySerial(int[] array) {
   if (array == null) {
@@ -23,12 +24,12 @@ void updateArraySerial(int[] array) {
 }
 
 void setup() {
-  status = new int[numElectrodes];
-  lastStatus = new int[numElectrodes];
+  status = new int[12];
+  lastStatus = new int[12];
   
   println((Object[])Serial.list());
-  // change the 1 below to the number corresponding to the output of the command above
-  inPort = new Serial(this, Serial.list()[1], baudRate); 
+  
+  inPort = new Serial(this, Serial.list()[device_number], baudRate); 
   inPort.bufferUntil('\n');
 }
 
@@ -43,7 +44,7 @@ void serialEvent(Serial p) {
     updateArraySerial(status);
   }
     
-  for (int i = 0; i < numElectrodes; i++) {
+  for (int i = 0; i < 12; i++) {
     if (lastStatus[i] == 0 && status[i] == 1) {
       // touched
       println("Electrode " + i + " was touched");
